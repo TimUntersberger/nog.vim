@@ -3,32 +3,34 @@ if exists("b:current_syntax")
 endif
 
 syn keyword NogKeyword
-  \ bind
-  \ bind_range
-  \ set
-  \ let
+  \ class
+  \ static
+  \ elif
+  \ null
+  \ return
+  \ this
+  \ op
+  \ var
+  \ while
   \ in
-  \ enable
-  \ ignore
-  \ rule
-  \ disable
-  \ workspace
-  \ bar
   \ as
   \ import
-  \ mode
-  \ update_channel
+  \ export
+  \ break
+  \ continue
+  \ extern
+  \ const
   \ for
+  \ fn
   \ if
   \ else
-  \ plugin
-  \ async
-  \ sleep
   \ loop
 
 syn match NogComment /\/\/.*$/
 syn region NogString start=/"/ skip=/\\./ end=/"/
-syn match NogFunctionCall /[a-zA-Z_][_0-9a-zA-Z]\+\ze(/
+syn match NogClassIdentifier /[A-Z][_0-9a-zA-Z]*/
+syn match NogIdentifier /[a-z_][_0-9a-zA-Z]*/
+syn match NogFunctionCall /[a-zA-Z_][_0-9a-zA-Z]*\ze(/
 syn match NogNumber /[0-9]\+/
 syn match NogBoolean /\(false\|true\)/
 syn match NogNamespaceAccessor /::/
@@ -37,6 +39,9 @@ hi def link NogComment Comment
 hi def link NogString String
 hi def link NogNumber Number
 hi def link NogBoolean Boolean
+hi def link NogClassIdentifier Identifier
+hi def link NogIdentifier Identifier
 hi def link NogKeyword Keyword
+hi def link NogDocumentationParam Keyword
 hi def link NogFunctionCall Function
 hi def link NogNamespaceAccessor Special

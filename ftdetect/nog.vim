@@ -1,1 +1,1 @@
-au BufNewFile,BufRead *.nog set filetype=nog
+au BufNewFile,BufRead *.nog,*.ns set filetype=nog
